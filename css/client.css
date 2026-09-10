@@ -412,3 +412,7 @@
   .module-head-date { display: none; }
   .module-head { align-items: flex-start; }
 }
+
+.brand{
+    padding-top: 5px;
+}

@@ -331,3 +331,7 @@
   .res-mat-grid { grid-template-columns: 1fr; }
   .module-head-actions { width: 100%; }
 }
+
+.brand{
+    padding-top: 5px;
+}
