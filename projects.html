@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects — Atelier Noir</title>
-<meta name="description" content="Selected architecture projects by Atelier Noir — residential, cultural, commercial and interior work." />
+<title>Projects — Stackly Noir</title>
+<meta name="description" content="Selected architecture projects by Stackly Noir — residential, cultural, commercial and interior work." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -16,8 +16,11 @@
 <!-- ============ NAV ============ -->
 <header class="topbar">
   <a href="index.html" class="brand">
-    <span class="brand-mark"></span>
-    <span class="brand-name">ATELIER NOIR<span>ARCHITECTURE · EST. 2008</span></span>
+    <img 
+     src="images/logooi.webp" 
+     alt="Stackly Noir Architecture"
+     class="brand-logo"
+    >
   </a>
   <nav class="nav-links">
     <a href="index.html">Home</a>
@@ -45,7 +48,7 @@
     <a href="login.html" class="btn login-btn">Client Login</a>
     <div class="m-contact">
       24 Hollow Lane, Dock District<br />
-      hello&#64;ateliernoir.studio<br />
+      hello&#64;Stacklynoir.studio<br />
       +44 20 7946 0123
     </div>
   </div>
@@ -158,7 +161,7 @@
         src="images/interior2.webp"
         alt="Minimal modern architecture"
       />
-      <span class="image-index">ATELIER / 01</span>
+      <span class="image-index">Stackly / 01</span>
     </div>
 
     <div class="statement-content reveal">
@@ -378,7 +381,7 @@
         src="images/interior4.webp"
         alt="Contemporary architecture"
       />
-      <span>ATELIER NOIR / 2026</span>
+      <span>Stackly NOIR / 2026</span>
     </div>
 
   </div>
@@ -390,7 +393,7 @@
   <div class="blueprint-bg"></div>
   <div class="container spot-grid">
     <div class="spot-img reveal">
-      <img src="https://images.pexels.com/photos/13398027/pexels-photo-13398027.jpeg?auto=compress&cs=tinysrgb&h=900&w=800" alt="Minimalist staircase" />
+      <img src="images/project10.webp" alt="Minimalist staircase" />
       <span class="spot-tag">In progress</span>
     </div>
     <div class="spot-text reveal">
@@ -481,7 +484,7 @@
 
 <!-- ============ 7 · CTA ============ -->
 <section class="cta-band" id="cta">
-  <div class="cta-img"><img src="https://images.pexels.com/photos/26241922/pexels-photo-26241922.jpeg?auto=compress&cs=tinysrgb&h=900&w=1600" alt="Glass facade skyscraper" /></div>
+  <div class="cta-img"><img src="images/building6.webp" alt="Glass facade skyscraper" /></div>
   <div class="cta-veil"></div>
   <div class="container cta-inner reveal">
     <p class="eyebrow">Your project</p>
@@ -495,35 +498,76 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="brand">
-          <span class="brand-mark"></span>
-          <span class="brand-name">ATELIER NOIR<span>ARCHITECTURE · EST. 2008</span></span>
-        </div>
+        <a href="index.html" class="brand">
+            <img 
+             src="images/logooi.webp"
+             alt="Stackly Noir Architecture"   
+             class="brand-logo"
+            >
+        </a>
         <p>An architecture studio crafting spaces where light, material and silence meet. Based in the Dock District, London.</p>
+        <div class="footer-social">
+           <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+           </a>
+
+           <a href="#" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+           </a>
+
+           <a href="#" aria-label="Pinterest">
+            <i class="fa-brands fa-pinterest-p"></i>
+           </a>
+
+           <a href="#" aria-label="Behance">
+            <i class="fa-brands fa-behance"></i>
+           </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Studio</h4>
-        <a href="studio.html">About</a>
-        <a href="studio.html#team">Team</a>
+        <a href="index.html">Home</a>
+        <a href="studio.html">Studio</a>
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <a href="contact.html">Contact</a>
-        <a href="login.html">Client Portal</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
+        <a href="error.html">Contact</a>
+        <a href="error.html">Client Portal</a>
+        <a href="error.html">Instagram</a>
+        <a href="error.html">LinkedIn</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
         <li>24 Hollow Lane</li>
         <li>Dock District, LDN</li>
-        <li>+44 20 7946 0123</li>
+        <!-- <li>+44 20 7946 0123</li> -->
+
+        <div class="footer-newsletter">
+           <h4>Studio Notes</h4>
+
+           <form class="newsletter-form">
+              <input 
+                type="email" 
+                placeholder="Your email address"
+                aria-label="Email address"
+                required
+               >
+
+               <button type="submit">
+                   Subscribe
+               </button>
+           </form>
+        </div>
+
       </div>
     </div>
+
+    
+
     <div class="footer-bottom">
-      <span>© <span class="js-year">2026</span> Atelier Noir Architecture</span>
+      <span>© <span class="js-year">2026</span> Stackly Noir Architecture</span>
       <span>Drawn in the Dock District</span>
     </div>
   </div>

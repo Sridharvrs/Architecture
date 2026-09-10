@@ -96,6 +96,9 @@
   padding: 14px 0; border-bottom:1px solid var(--line);
   color: var(--paper); font-size:.95rem;
 }
+.spot-text .lead{
+    color: antiquewhite;
+}
 .spot-list li span { font-family: var(--font-mono); font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color: var(--accent-2); }
 
 /* ---- Awards ---- */

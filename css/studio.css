@@ -511,9 +511,10 @@
 .val span { display:block; margin-top:6px; font-family: var(--font-mono); font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color: var(--gold); }
 
 /* ---- Join ---- */
-.join-grid { display:grid; grid-template-columns: 1.3fr 0.9fr; gap: clamp(36px,6vw,72px); align-items:center; }
+.join-grid { display:grid; grid-template-columns: 1.3fr 0.9fr; gap: clamp(36px,6vw,72px); align-items:center;}
 .join-aside { border:1px solid var(--line); }
 .join-row {
+    background-color: rgba(240, 248, 255, 0.108); 
   display:flex; justify-content:space-between; align-items:center;
   padding: 18px 22px; border-bottom:1px solid var(--line);
   font-family: var(--font-mono); font-size:.82rem; letter-spacing:.1em; text-transform:uppercase;
