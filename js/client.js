@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var threadData = {
     iris: { initials: "IC", name: "Iris Calloway", role: "Founding Partner · online", color: "#c8693a" },
     sana: { initials: "SO", name: "Sana Okafor", role: "Associate, Interiors · online", color: "#2f6f6a" },
-    studio: { initials: "AN", name: "Studio admin", role: "Atelier Noir · away", color: "#8a8275" }
+    studio: { initials: "AN", name: "Studio admin", role: "StacklyNoir · away", color: "#8a8275" }
   };
   threads.forEach(function (t) {
     t.addEventListener("click", function () {
@@ -164,5 +164,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* keep theme.js mobile menu from conflicting */
-  window.Atelier = window.Atelier || {};
+  window.Stackly= window.Stackly|| {};
 })();

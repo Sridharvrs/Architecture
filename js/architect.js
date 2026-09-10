@@ -135,5 +135,5 @@ document.addEventListener("DOMContentLoaded", () => {
   var logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) logoutBtn.addEventListener("click", function (e) { if (!confirm("Log out of the architect workspace?")) e.preventDefault(); });
 
-  window.Atelier = window.Atelier || {};
+  window.Stackly= window.Stackly|| {};
 })();
