@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Architect Workspace — Atelier Noir</title>
+<meta name="description" content="Architect workspace for Atelier Noir — manage projects, tasks, site reports, team and studio resources." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/architect.css" />
+</head>
+<body class="dash-body" data-role="architect">
+
+<!-- ============ STICKY TOPBAR ============ -->
+<header class="dash-topbar" id="dashTopbar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="dash-brand">
+    <span class="brand-mark"></span>
+    <span class="brand-name">ATELIER NOIR<span>ARCHITECT WORKSPACE</span></span>
+  </a>
+  <div class="topbar-right">
+    <div class="topbar-search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="text" placeholder="Search projects, drawings, people…" id="globalSearch" />
+    </div>
+    <button class="icon-btn" aria-label="Notifications" id="notifBtn">
+      <svg viewBox="0 0 24 24"><path d="M18 16v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2zM10 21a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <i class="badge">5</i>
+    </button>
+    <div class="topbar-user">
+      <span class="tu-avatar" style="background:#2f6f6a"><span class="avatarLetter">I</span></span>
+      <span class="tu-name"><b class="profileName">Iris Calloway</b><i>Founding Partner</i></span>
+    </div>
+    <a href="login.html" class="logout-btn" id="logoutBtn">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Logout</span>
+    </a>
+  </div>
+</header>
+
+<div class="notif-panel" id="notifPanel">
+  <p class="np-title">Notifications</p>
+  <div class="np-item"><i class="np-dot urgent"></i><div><b>Tender overdue — Threaded House</b><span>Package delayed 2 days</span></div></div>
+  <div class="np-item"><i class="np-dot"></i><div><b>Planning decision — Quarry Cafe</b><span>Consent granted with conditions</span></div></div>
+  <div class="np-item"><i class="np-dot"></i><div><b>Sana commented on stair detail</b><span>Stair Detail 7 — R-02</span></div></div>
+  <div class="np-item"><i class="np-dot"></i><div><b>New RFI from contractor</b><span>Grid Works · structural query</span></div></div>
+  <div class="np-item"><i class="np-dot"></i><div><b>Weekly timesheet due</b><span>Fri 17:00</span></div></div>
+</div>
+
+<div class="dash-layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="sb-head">
+      <p class="sb-label">Workspace</p>
+      <p class="sb-project">Atelier Noir Studio</p>
+    </div>
+    <nav class="sb-nav">
+      <button class="sb-link active" data-module="overview">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="5" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="12" width="7" height="9" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="7" height="5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Overview</span>
+      </button>
+      <button class="sb-link" data-module="projects">
+        <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>All Projects</span>
+        <i class="sb-count">6</i>
+      </button>
+      <button class="sb-link" data-module="tasks">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Task Board</span>
+      </button>
+      <button class="sb-link" data-module="site">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Site Reports</span>
+      </button>
+      <button class="sb-link" data-module="team">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Team</span>
+      </button>
+      <button class="sb-link" data-module="resources">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V2H6.5A2.5 2.5 0 004 4.5v15zM4 19.5A2.5 2.5 0 016.5 22H20v-5H6.5A2.5 2.5 0 004 19.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Resources</span>
+      </button>
+    </nav>
+    <div class="sb-foot">
+      <div class="sb-stat-mini">
+        <div class="ssm-row"><span>Hours this week</span><b>38.5 / 40</b></div>
+        <div class="ssm-bar"><i style="width:96%"></i></div>
+      </div>
+      <a href="login.html" class="sb-logout">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="dash-main">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="module active" id="m-overview">
+      <div class="module-head">
+        <div>
+          <p class="eyebrow">Studio overview</p>
+          <h1>Good morning, <span class="profileName">Iris</span>.</h1>
+        </div>
+        <div class="module-head-actions">
+          <button class="btn btn-outline btn-dark sm-btn" id="newTaskBtn">+ New task</button>
+          <button class="btn btn-solid sm-btn" id="newProjectBtn">+ New project</button>
+        </div>
+      </div>
+
+      <!-- KPI row -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <div><b>6</b><span>Active projects</span></div>
+        </div>
+        <div class="kpi-card kpi-warn">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <div><b>3</b><span>Overdue tasks</span></div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <div><b>2</b><span>Site visits this week</span></div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <div><b>38.5</b><span>Hours logged / 40</span></div>
+        </div>
+      </div>
+
+      <!-- workload + deadlines -->
+      <div class="ov-two-col">
+        <div class="ov-panel">
+          <div class="op-head"><h3>Project workload</h3><span>6 projects</span></div>
+          <div class="workload-list">
+            <div class="wl-row"><div class="wl-info"><b>The Threaded House</b><span>Stage 4 · Technical</span></div><div class="wl-bar"><i style="width:85%;background:var(--accent)"></i></div><span class="wl-pct">85%</span></div>
+            <div class="wl-row"><div class="wl-info"><b>Quarry Cafe</b><span>Stage 3 · Developed</span></div><div class="wl-bar"><i style="width:50%;background:var(--teal)"></i></div><span class="wl-pct">50%</span></div>
+            <div class="wl-row"><div class="wl-info"><b>Marsh Pavilion</b><span>Stage 2 · Concept</span></div><div class="wl-bar"><i style="width:30%;background:var(--gold)"></i></div><span class="wl-pct">30%</span></div>
+            <div class="wl-row"><div class="wl-info"><b>Grid Works Phase 2</b><span>Stage 6 · Construction</span></div><div class="wl-bar"><i style="width:70%;background:var(--accent)"></i></div><span class="wl-pct">70%</span></div>
+            <div class="wl-row"><div class="wl-info"><b>Linden Cottage</b><span>Stage 1 · Brief</span></div><div class="wl-bar"><i style="width:15%;background:var(--gold)"></i></div><span class="wl-pct">15%</span></div>
+            <div class="wl-row"><div class="wl-info"><b>Stillness Chapel II</b><span>Stage 0 · Strategic</span></div><div class="wl-bar"><i style="width:5%;background:var(--stone)"></i></div><span class="wl-pct">5%</span></div>
+          </div>
+        </div>
+
+        <div class="ov-panel">
+          <div class="op-head"><h3>This week's deadlines</h3></div>
+          <div class="deadline-list">
+            <div class="dl-row urgent"><span class="dl-flag">URGENT</span><div><b>Tender package — Threaded House</b><i>Today · 17:00</i></div></div>
+            <div class="dl-row"><span class="dl-flag">TOMORROW</span><div><b>Planning drawings — Quarry Cafe</b><i>Wed · 12:00</i></div></div>
+            <div class="dl-row"><span class="dl-flag">THU</span><div><b>Site visit report — Grid Works</b><i>Thu · 10:00</i></div></div>
+            <div class="dl-row"><span class="dl-flag">FRI</span><div><b>Weekly timesheet</b><i>Fri · 17:00</i></div></div>
+            <div class="dl-row"><span class="dl-flag">FRI</span><div><b>Client review — Marsh Pavilion</b><i>Fri · 14:00</i></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- recent tasks + feed -->
+      <div class="ov-two-col">
+        <div class="ov-panel">
+          <div class="op-head"><h3>My tasks today</h3></div>
+          <div class="today-tasks">
+            <label class="tt-row"><input type="checkbox" checked /><span class="tt-text done">Review R-04 plans before upload to client</span></label>
+            <label class="tt-row"><input type="checkbox" checked /><span class="tt-text done">Sign off stair detail 7</span></label>
+            <label class="tt-row"><input type="checkbox" /><span class="tt-text">Finish tender package cover sheet</span></label>
+            <label class="tt-row"><input type="checkbox" /><span class="tt-text">Call structural engineer re. foundation depth</span></label>
+            <label class="tt-row"><input type="checkbox" /><span class="tt-text">Sketch Marsh Pavilion roof concept</span></label>
+          </div>
+        </div>
+        <div class="ov-panel">
+          <div class="op-head"><h3>Studio feed</h3></div>
+          <div class="feed-list">
+            <div class="feed-row"><span class="feed-av" style="background:#c8693a">SO</span><div><b>Sana</b> commented on <i>Stair Detail 7</i><span>2h ago</span></div></div>
+            <div class="feed-row"><span class="feed-av" style="background:#2f6f6a">TM</span><div><b>Theo</b> logged 7h on <i>Threaded House</i><span>3h ago</span></div></div>
+            <div class="feed-row"><span class="feed-av" style="background:#8a8275">FB</span><div><b>Felix</b> uploaded <i>Grid Works Phase 2 · site photo 14</i><span>5h ago</span></div></div>
+            <div class="feed-row"><span class="feed-av" style="background:#d4a24c">IC</span><div><b>You</b> approved <i>oak cladding sample</i><span>1d ago</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ALL PROJECTS ===== -->
+    <section class="module" id="m-projects">
+      <div class="module-head">
+        <div><p class="eyebrow">Studio portfolio</p><h1>All Projects</h1></div>
+        <div class="proj-controls">
+          <div class="proj-search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="text" id="projSearch" placeholder="Filter by name…" /></div>
+          <select id="projStageFilter" class="proj-select">
+            <option value="all">All stages</option>
+            <option value="0">Stage 0</option><option value="1">Stage 1</option><option value="2">Stage 2</option><option value="3">Stage 3</option><option value="4">Stage 4</option><option value="6">Stage 6</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="proj-table">
+        <div class="prt-head">
+          <span>Project</span><span>Stage</span><span>Lead</span><span>Team</span><span>Progress</span><span>Status</span>
+        </div>
+        <div class="prt-row" data-name="threaded house" data-stage="4">
+          <div class="prt-name"><img src="images/dash1.webp" alt="" /><div><b>The Threaded House</b><i>Islington · Residential</i></div></div>
+          <span>Stage 4</span>
+          <span>Iris Calloway</span>
+          <div class="prt-team"><span style="background:#2f6f6a">IC</span><span style="background:#c8693a">TM</span><span style="background:#d4a24c">SO</span></div>
+          <div class="prt-prog"><div class="prt-bar"><i style="width:42%"></i></div><b>42%</b></div>
+          <span class="prt-status active">On track</span>
+        </div>
+        <div class="prt-row" data-name="quarry cafe" data-stage="3">
+          <div class="prt-name"><img src="images/dash2.webp" alt="" /><div><b>Quarry Cafe</b><i>Derbyshire · Cultural</i></div></div>
+          <span>Stage 3</span>
+          <span>Iris Calloway</span>
+          <div class="prt-team"><span style="background:#2f6f6a">IC</span><span style="background:#8a8275">FB</span></div>
+          <div class="prt-prog"><div class="prt-bar"><i style="width:58%"></i></div><b>58%</b></div>
+          <span class="prt-status">Planning</span>
+        </div>
+        <div class="prt-row" data-name="marsh pavilion" data-stage="2">
+          <div class="prt-name"><img src="images/dash3.webp" alt="" /><div><b>Marsh Pavilion</b><i>Norfolk · Cultural</i></div></div>
+          <span>Stage 2</span>
+          <span>Theo Marchetti</span>
+          <div class="prt-team"><span style="background:#c8693a">TM</span><span style="background:#d4a24c">SO</span></div>
+          <div class="prt-prog"><div class="prt-bar"><i style="width:30%"></i></div><b>30%</b></div>
+          <span class="prt-status">Concept</span>
+        </div>
+        <div class="prt-row" data-name="grid works phase 2" data-stage="6">
+          <div class="prt-name"><img src="images/dash4.webp" alt="" /><div><b>Grid Works Phase 2</b><i>Birmingham · Commercial</i></div></div>
+          <span>Stage 6</span>
+          <span>Felix Brandt</span>
+          <div class="prt-team"><span style="background:#8a8275">FB</span><span style="background:#2f6f6a">IC</span><span style="background:#c8693a">TM</span></div>
+          <div class="prt-prog"><div class="prt-bar"><i style="width:70%"></i></div><b>70%</b></div>
+          <span class="prt-status active">On site</span>
+        </div>
+        <div class="prt-row" data-name="linden cottage" data-stage="1">
+          <div class="prt-name"><img src="images/dash5.webp" alt="" /><div><b>Linden Cottage</b><i>Surrey · Residential</i></div></div>
+          <span>Stage 1</span>
+          <span>Theo Marchetti</span>
+          <div class="prt-team"><span style="background:#c8693a">TM</span></div>
+          <div class="prt-prog"><div class="prt-bar"><i style="width:15%"></i></div><b>15%</b></div>
+          <span class="prt-status">Brief</span>
+        </div>
+        <div class="prt-row" data-name="stillness chapel ii" data-stage="0">
+          <div class="prt-name"><img src="images/dash6.webp" alt="" /><div><b>Stillness Chapel II</b><i>Kent · Cultural</i></div></div>
+          <span>Stage 0</span>
+          <span>Iris Calloway</span>
+          <div class="prt-team"><span style="background:#2f6f6a">IC</span></div>
+          <div class="prt-prog"><div class="prt-bar"><i style="width:5%"></i></div><b>5%</b></div>
+          <span class="prt-status">Strategic</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TASK BOARD ===== -->
+    <section class="module" id="m-tasks">
+      <div class="module-head">
+        <div><p class="eyebrow">Kanban</p><h1>Task Board</h1></div>
+        <button class="btn btn-solid sm-btn" id="addTaskCol">+ Add card</button>
+      </div>
+      <div class="kanban" id="kanban">
+        <div class="kb-col">
+          <div class="kb-col-head"><span class="kb-dot todo"></span><b>To do</b><i>4</i></div>
+          <div class="kb-cards">
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--accent)">Threaded House</span>
+              <p>Finish tender cover sheet &amp; prelims</p>
+              <div class="kb-foot"><span class="kb-due urgent">Today</span><span class="kb-av" style="background:#2f6f6a">IC</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--teal)">Quarry Cafe</span>
+              <p>Update planning drawings per conditions</p>
+              <div class="kb-foot"><span class="kb-due">Wed</span><span class="kb-av" style="background:#8a8275">FB</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--gold)">Marsh Pavilion</span>
+              <p>Sketch roof concept — three options</p>
+              <div class="kb-foot"><span class="kb-due">Fri</span><span class="kb-av" style="background:#c8693a">TM</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--stone)">Studio</span>
+              <p>Order basswood for model shop</p>
+              <div class="kb-foot"><span class="kb-due">Next wk</span><span class="kb-av" style="background:#d4a24c">SO</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="kb-col">
+          <div class="kb-col-head"><span class="kb-dot doing"></span><b>In progress</b><i>3</i></div>
+          <div class="kb-cards">
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--accent)">Threaded House</span>
+              <p>Stair detail 7 — steel stringer connection</p>
+              <div class="kb-foot"><span class="kb-due">Today</span><span class="kb-av" style="background:#d4a24c">SO</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--accent)">Threaded House</span>
+              <p>R-04 ground &amp; first floor plans</p>
+              <div class="kb-foot"><span class="kb-due">Today</span><span class="kb-av" style="background:#2f6f6a">IC</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--teal)">Quarry Cafe</span>
+              <p>Daylight study — south elevation</p>
+              <div class="kb-foot"><span class="kb-due">Thu</span><span class="kb-av" style="background:#8a8275">FB</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="kb-col">
+          <div class="kb-col-head"><span class="kb-dot review"></span><b>In review</b><i>2</i></div>
+          <div class="kb-cards">
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--accent)">Threaded House</span>
+              <p>Material sample — oak cladding</p>
+              <div class="kb-foot"><span class="kb-due done">Approved</span><span class="kb-av" style="background:#2f6f6a">IC</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--gold)">Marsh Pavilion</span>
+              <p>Concept model 1:100 — review</p>
+              <div class="kb-foot"><span class="kb-due">Fri</span><span class="kb-av" style="background:#c8693a">TM</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="kb-col">
+          <div class="kb-col-head"><span class="kb-dot done"></span><b>Done</b><i>5</i></div>
+          <div class="kb-cards">
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--accent)">Threaded House</span>
+              <p>RIBA Stage 3 sign-off</p>
+              <div class="kb-foot"><span class="kb-due done">Complete</span><span class="kb-av" style="background:#2f6f6a">IC</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--teal)">Quarry Cafe</span>
+              <p>Planning application submitted</p>
+              <div class="kb-foot"><span class="kb-due done">Complete</span><span class="kb-av" style="background:#8a8275">FB</span></div>
+            </div>
+            <div class="kb-card" draggable="true">
+              <span class="kb-tag" style="background:var(--accent)">Threaded House</span>
+              <p>Structural calculations — foundations</p>
+              <div class="kb-foot"><span class="kb-due done">Complete</span><span class="kb-av" style="background:#c8693a">TM</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SITE REPORTS ===== -->
+    <section class="module" id="m-site">
+      <div class="module-head"><div><p class="eyebrow">On site</p><h1>Site Reports</h1></div></div>
+
+      <div class="site-summary">
+        <div class="ss-card"><b>2</b><span>Active sites</span></div>
+        <div class="ss-card"><b>14</b><span>Reports this month</span></div>
+        <div class="ss-card"><b>1</b><span>RFI open</span></div>
+        <div class="ss-card"><b>0</b><span>Defects logged</span></div>
+      </div>
+
+      <div class="site-reports">
+        <h3>Recent reports</h3>
+        <div class="sr-card">
+          <div class="sr-head">
+            <div class="sr-thumb"><img src="images/dash7.webp" alt="Site" /></div>
+            <div class="sr-meta"><span class="sr-date">12 Sep 2025</span><h4>Grid Works Phase 2 — Visit 14</h4><p>Birmingham · Felix Brandt</p></div>
+            <span class="sr-status ok">On programme</span>
+          </div>
+          <div class="sr-body">
+            <p>Steel frame erection 80% complete. Second-floor deck poured. Cladding mock-up panel approved on site. No safety incidents. Next visit: 26 Sep.</p>
+            <div class="sr-photos">
+              <img src="images/dash9.webp" alt="Site photo" />
+              <img src="images/dash10.webp" alt="Site photo" />
+              <img src="images/dash11.webp" alt="Site photo" />
+            </div>
+          </div>
+        </div>
+        <div class="sr-card">
+          <div class="sr-head">
+            <div class="sr-thumb"><img src="images/dash12.webp" alt="Site" /></div>
+            <div class="sr-meta"><span class="sr-date">08 Sep 2025</span><h4>Threaded House — Pre-start check</h4><p>Islington · Iris Calloway</p></div>
+            <span class="sr-status warn">Action needed</span>
+          </div>
+          <div class="sr-body">
+            <p>Party wall agreement still pending with No. 42. Temporary staircase access confirmed. Hoarding permit granted. Recommend chasing party wall surveyor before site start.</p>
+            <div class="sr-actions">
+              <div class="sr-action"><b>Open</b><span>Party wall — No. 42</span></div>
+              <div class="sr-action"><b>Closed</b><span>Hoarding permit</span></div>
+              <div class="sr-action"><b>Closed</b><span>Temp power</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="sr-card">
+          <div class="sr-head">
+            <div class="sr-thumb"><img src="images/dash13.webp" alt="Site" /></div>
+            <div class="sr-meta"><span class="sr-date">02 Sep 2025</span><h4>Grid Works Phase 2 — Visit 13</h4><p>Birmingham · Felix Brandt</p></div>
+            <span class="sr-status ok">On programme</span>
+          </div>
+          <div class="sr-body">
+            <p>First-floor slab poured and cured. Service routes confirmed with M&E. Crane base inspected and signed off. Minor programme delay on cladding delivery — 3 days, recoverable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="module" id="m-team">
+      <div class="module-head"><div><p class="eyebrow">The practice</p><h1>Team</h1></div></div>
+
+      <div class="team-stats">
+        <div class="ts-card"><b>38</b><span>People</span></div>
+        <div class="ts-card"><b>6</b><span>Partners &amp; associates</span></div>
+        <div class="ts-card"><b>22</b><span>Architects</span></div>
+        <div class="ts-card"><b>10</b><span>Model &amp; support</span></div>
+      </div>
+
+      <div class="team-directory">
+        <h3>Leadership</h3>
+        <div class="td-grid">
+          <div class="td-card">
+            <div class="td-photo"><img src="images/dash14.webp" alt="" /><span class="td-status online"></span></div>
+            <div class="td-info"><h4>Iris Calloway</h4><span>Founding Partner</span><p>Cultural · Model shop</p></div>
+          </div>
+          <div class="td-card">
+            <div class="td-photo"><img src="images/dash1.webp" alt="" /><span class="td-status online"></span></div>
+            <div class="td-info"><h4>Theo Marchetti</h4><span>Partner, Residential</span><p>Housing · Townhouses</p></div>
+          </div>
+          <div class="td-card">
+            <div class="td-photo"><img src="images/dash2.webp" alt="" /><span class="td-status away"></span></div>
+            <div class="td-info"><h4>Sana Okafor</h4><span>Associate, Interiors</span><p>Joinery · Lighting</p></div>
+          </div>
+          <div class="td-card">
+            <div class="td-photo"><img src="images/dash3.webp" alt="" /><span class="td-status online"></span></div>
+            <div class="td-info"><h4>Felix Brandt</h4><span>Associate, Commercial</span><p>Workplace · Adaptive reuse</p></div>
+          </div>
+        </div>
+
+        <h3>Project architects</h3>
+        <div class="td-list">
+          <div class="tdl-row"><span class="tdl-av" style="background:var(--accent)">RA</span><div><b>Rohan Apte</b><i>Part 3 · Threaded House</i></div><span class="tdl-hours">36h</span></div>
+          <div class="tdl-row"><span class="tdl-av" style="background:var(--teal)">MK</span><div><b>Mara Klein</b><i>Part 2 · Quarry Cafe</i></div><span class="tdl-hours">39h</span></div>
+          <div class="tdl-row"><span class="tdl-av" style="background:var(--gold)">JD</span><div><b>Jordan Devi</b><i>Part 2 · Marsh Pavilion</i></div><span class="tdl-hours">34h</span></div>
+          <div class="tdl-row"><span class="tdl-av" style="background:var(--stone)">LH</span><div><b>Liam Halloran</b><i>Part 1 · Linden Cottage</i></div><span class="tdl-hours">40h</span></div>
+          <div class="tdl-row"><span class="tdl-av" style="background:var(--accent)">NV</span><div><b>Nadia Volkov</b><i>Model maker · Workshop</i></div><span class="tdl-hours">38h</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESOURCES ===== -->
+    <section class="module" id="m-resources">
+      <div class="module-head"><div><p class="eyebrow">Studio library</p><h1>Resources</h1></div></div>
+
+      <div class="res-grid">
+        <div class="res-col">
+          <h3>Templates</h3>
+          <div class="res-list">
+            <a class="res-item"><span class="res-ic">⬚</span><div><b>Drawing sheet template A1</b><i>Indesign · 2.4 MB</i></div></a>
+            <a class="res-item"><span class="res-ic">⬚</span><div><b>Site report template</b><i>Word · 86 KB</i></div></a>
+            <a class="res-item"><span class="res-ic">⬚</span><div><b>Fee proposal template</b><i>Excel · 120 KB</i></div></a>
+            <a class="res-item"><span class="res-ic">⬂</span><div><b>RIBA Plan of Work 2020</b><i>PDF · 4.1 MB</i></div></a>
+            <a class="res-item"><span class="res-ic">⬂</span><div><b>Material palette master</b><i>PDF · 8.7 MB</i></div></a>
+          </div>
+        </div>
+        <div class="res-col">
+          <h3>Material library</h3>
+          <div class="res-mat-grid">
+            <div class="res-mat"><div class="rm-swatch" style="background:#8a7e6d"></div><b>Board-formed concrete</b><i>Supplier · BPM</i></div>
+            <div class="res-mat"><div class="rm-swatch" style="background:#c8a78a"></div><b>European oak, UV-oil</b><i>Supplier · Vastern</i></div>
+            <div class="res-mat"><div class="rm-swatch" style="background:#5a5a52"></div><b>Black steel, waxed</b><i>Supplier · Ironworks Co</i></div>
+            <div class="res-mat"><div class="rm-swatch" style="background:#d9cfbd"></div><b>Lime plaster, hand-trowelled</b><i>Supplier · Limebase</i></div>
+            <div class="res-mat"><div class="rm-swatch" style="background:#3a3a36"></div><b>Brushed slate</b><i>Supplier :: Welsh Slate</i></div>
+            <div class="res-mat"><div class="rm-swatch" style="background:#b8a890"></div><b>Travertine, honed</b><i>Supplier :: Stone Group</i></div>
+          </div>
+        </div>
+        <div class="res-col">
+          <h3>Suppliers &amp; consultants</h3>
+          <div class="res-list">
+            <a class="res-item"><span class="res-ic">◆</span><div><b>Webber Smith — structures</b><i>020 7403 1199</i></div></a>
+            <a class="res-item"><span class="res-ic">◆</span><div><b>Holt M&amp;E — services</b><i>020 7833 4040</i></div></a>
+            <a class="res-item"><span class="res-ic">◆</span><div><b>Vastern Timber — oak</b><i>01249 712 000</i></div></a>
+            <a class="res-item"><span class="res-ic">◆</span><div><b>Ironworks Co — steel</b><i>0117 955 5577</i></div></a>
+            <a class="res-item"><span class="res-ic">◆</span><div><b>Limebase — plaster</b><i>01264 731 222</i></div></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="res-hours">
+        <h3>Studio hours — this week</h3>
+        <div class="hours-bar">
+          <div class="hb-day"><span>Mon</span><div class="hb-fill" style="height:85%"></div><b>8.5</b></div>
+          <div class="hb-day"><span>Tue</span><div class="hb-fill" style="height:75%"></div><b>7.5</b></div>
+          <div class="hb-day"><span>Wed</span><div class="hb-fill" style="height:95%"></div><b>9.5</b></div>
+          <div class="hb-day"><span>Thu</span><div class="hb-fill" style="height:70%"></div><b>7.0</b></div>
+          <div class="hb-day"><span>Fri</span><div class="hb-fill" style="height:60%"></div><b>6.0</b></div>
+        </div>
+        <p class="hours-total">Total: <b>38.5h</b> of 40h target</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/architect.js"></script>
+</body>
+</html>

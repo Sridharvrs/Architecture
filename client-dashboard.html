@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Client Portal — Atelier Noir</title>
+<meta name="description" content="Client dashboard for Atelier Noir — track your project, drawings, messages, payments and timeline." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/client.css" />
+</head>
+<body class="dash-body" data-role="client">
+
+<!-- ============ STICKY TOPBAR (mobile toggle) ============ -->
+<header class="dash-topbar" id="dashTopbar">
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="dash-brand">
+    <span class="brand-mark"></span>
+    <span class="brand-name">ATELIER NOIR<span>CLIENT PORTAL</span></span>
+  </a>
+  <div class="topbar-right">
+    <button class="icon-btn" aria-label="Notifications" id="notifBtn">
+      <svg viewBox="0 0 24 24"><path d="M18 16v-5a6 6 0 10-12 0v5l-2 2v1h16v-1l-2-2zM10 21a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <i class="badge">3</i>
+    </button>
+    <div class="topbar-user">
+      <span class="tu-avatar"><span class="avatarLetter">E</span></span>
+      <span class="tu-name"><b class="profileName">Eleanor Voss</b><i>Client</i></span>
+    </div>
+    <a href="login.html" class="logout-btn" id="logoutBtn">
+      <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Logout</span>
+    </a>
+  </div>
+</header>
+
+<!-- notification dropdown -->
+<div class="notif-panel" id="notifPanel">
+  <p class="np-title">Notifications</p>
+  <div class="np-item"><i class="np-dot"></i><div><b>New drawing revision</b><span>The Threaded House · R-04 uploaded</span></div></div>
+  <div class="np-item"><i class="np-dot"></i><div><b>Invoice due</b><span>Invoice #2043 · due in 5 days</span></div></div>
+  <div class="np-item"><i class="np-dot"></i><div><b>Site visit scheduled</b><span>Wed 17 Sep · 10:00 · Islington</span></div></div>
+</div>
+
+<div class="dash-layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="dash-sidebar" id="dashSidebar">
+    <div class="sb-head">
+      <p class="sb-label">Menu</p>
+      <p class="sb-project">The Threaded House</p>
+    </div>
+    <nav class="sb-nav">
+      <button class="sb-link active" data-module="overview">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Overview</span>
+      </button>
+      <button class="sb-link" data-module="projects">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 22V12h6v10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span>My Projects</span>
+      </button>
+      <button class="sb-link" data-module="drawings">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Drawings &amp; Files</span>
+      </button>
+      <button class="sb-link" data-module="messages">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Messages</span>
+        <i class="sb-badge">2</i>
+      </button>
+      <button class="sb-link" data-module="payments">
+        <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Payments</span>
+      </button>
+      <button class="sb-link" data-module="timeline">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Timeline</span>
+      </button>
+    </nav>
+    <div class="sb-foot">
+      <div class="sb-progress-mini">
+        <div class="spm-row"><span>Project progress</span><b>42%</b></div>
+        <div class="spm-bar"><i style="width:42%"></i></div>
+      </div>
+      <a href="login.html" class="sb-logout">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <!-- ============ MAIN ============ -->
+  <main class="dash-main">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="module active" id="m-overview">
+      <div class="module-head">
+        <div>
+          <p class="eyebrow">Welcome back</p>
+          <h1>Good morning, Eleanor.</h1>
+        </div>
+        <div class="module-head-date">
+          <b id="todayDate">—</b>
+          <span>Islington · 14°C clear</span>
+        </div>
+      </div>
+
+      <!-- KPI cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+          <div><b>1</b><span>Active project</span></div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+          <div><b>27</b><span>Drawings shared</span></div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+          <div><b>2</b><span>Unread messages</span></div>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+          <div><b>£48k</b><span>Paid to date</span></div>
+        </div>
+      </div>
+
+      <!-- project spotlight -->
+      <div class="ov-grid">
+        <div class="ov-spotlight">
+          <div class="ov-spot-img">
+            <img src="images/project10.webp" alt="The Threaded House" />
+          </div>
+          <div class="ov-spot-body">
+            <span class="ov-tag">In progress</span>
+            <h2>The Threaded House</h2>
+            <p>A four-storey townhouse organised around a single black-steel and oak stair that threads every level.</p>
+            <div class="ov-progress">
+              <div class="ovp-row"><span>Overall progress</span><b>42%</b></div>
+              <div class="ovp-bar"><i style="width:42%"></i></div>
+            </div>
+            <div class="ov-stage">
+              <span>Current stage</span>
+              <strong>RIBA 4 — Technical Design</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="ov-side">
+          <h3>Upcoming</h3>
+          <div class="ov-event">
+            <div class="ov-event-date"><b>17</b><span>SEP</span></div>
+            <div class="ov-event-body"><strong>Site visit</strong><span>10:00 · Islington plot</span></div>
+          </div>
+          <div class="ov-event">
+            <div class="ov-event-date"><b>24</b><span>SEP</span></div>
+            <div class="ov-event-body"><strong>Drawing review</strong><span>14:00 · Studio, with Iris</span></div>
+          </div>
+          <div class="ov-event">
+            <div class="ov-event-date"><b>01</b><span>OCT</span></div>
+            <div class="ov-event-body"><strong>Invoice due</strong><span>Stage 4 fee · £24,000</span></div>
+          </div>
+          <div class="ov-event">
+            <div class="ov-event-date"><b>12</b><span>OCT</span></div>
+            <div class="ov-event-body"><strong>Tender package</strong><span>Expected delivery</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- recent activity -->
+      <div class="ov-activity">
+        <h3>Recent activity</h3>
+        <div class="act-list">
+          <div class="act-row"><span class="act-dot"></span><div><b>Drawing R-04 uploaded</b><i>Iris Calloway · 2 hours ago</i></div></div>
+          <div class="act-row"><span class="act-dot"></span><div><b>Site visit confirmed for 17 Sep</b><i>Studio · yesterday</i></div></div>
+          <div class="act-row"><span class="act-dot"></span><div><b>Invoice #2042 paid</b><i>£24,000 · 3 days ago</i></div></div>
+          <div class="act-row"><span class="act-dot"></span><div><b>Material sample approved — oak cladding</b><i>Eleanor Voss · 5 days ago</i></div></div>
+          <div class="act-row"><span class="act-dot"></span><div><b>RIBA Stage 3 sign-off</b><i>Both parties · 1 week ago</i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MY PROJECTS ===== -->
+    <section class="module" id="m-projects">
+      <div class="module-head"><div><p class="eyebrow">Portfolio</p><h1>My Projects</h1></div></div>
+
+      <div class="proj-detail">
+        <div class="pd-hero">
+          <img src="images/project5.webp" alt="The Threaded House" />
+          <div class="pd-hero-veil"></div>
+          <div class="pd-hero-info">
+            <span class="ov-tag">In progress</span>
+            <h2>The Threaded House</h2>
+            <p>Islington, London · 310 m² · Four storeys</p>
+          </div>
+        </div>
+        <div class="pd-meta">
+          <div class="pd-meta-cell"><span>Architect</span><b>Iris Calloway</b></div>
+          <div class="pd-meta-cell"><span>Started</span><b>Jan 2025</b></div>
+          <div class="pd-meta-cell"><span>Target completion</span><b>Q3 2026</b></div>
+          <div class="pd-meta-cell"><span>Budget</span><b>£1.2M</b></div>
+          <div class="pd-meta-cell"><span>Stage</span><b>RIBA 4</b></div>
+          <div class="pd-meta-cell"><span>Progress</span><b>42%</b></div>
+        </div>
+        <div class="pd-body">
+          <div class="pd-col">
+            <h3>Project brief</h3>
+            <p>A family home for three generations on a narrow Victorian plot. The stair is the spine — a black-steel and oak element threading all four floors. Ground floor opens to a walled courtyard; upper levels step back for a roof terrace.</p>
+            <h3>Key rooms</h3>
+            <ul class="pd-rooms">
+              <li><span>GF</span>Living, kitchen, courtyard</li>
+              <li><span>1F</span>Primary suite, dressing</li>
+              <li><span>2F</span>Two children's rooms, bath</li>
+              <li><span>3F</span>Grandparent suite, terrace</li>
+            </ul>
+          </div>
+          <div class="pd-col">
+            <h3>Stage breakdown</h3>
+            <div class="pd-stage">
+              <div class="pds-row done"><i></i><div><b>Stage 0–1 · Brief</b><span>Complete</span></div></div>
+              <div class="pds-row done"><i></i><div><b>Stage 2 · Concept</b><span>Complete</span></div></div>
+              <div class="pds-row done"><i></i><div><b>Stage 3 · Developed</b><span>Signed off</span></div></div>
+              <div class="pds-row active"><i></i><div><b>Stage 4 · Technical</b><span>In progress · 60%</span></div></div>
+              <div class="pds-row"><i></i><div><b>Stage 5 · Manufacturing</b><span>Not started</span></div></div>
+              <div class="pds-row"><i></i><div><b>Stage 6 · Construction</b><span>Not started</span></div></div>
+              <div class="pds-row"><i></i><div><b>Stage 7 · Handover</b><span>Not started</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="past-projects">
+        <h3>Completed projects</h3>
+        <div class="pp-grid">
+          <div class="pp-card">
+            <img src="images/project4.webp" alt="White Ledger House" />
+            <div class="pp-body"><span>2023</span><h4>White Ledger House</h4><p>Surrey · Residential</p></div>
+          </div>
+          <div class="pp-card">
+            <img src="images/project5.webp" alt="Hollow Stair" />
+            <div class="pp-body"><span>2023</span><h4>Hollow Stair</h4><p>London · Interior</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DRAWINGS ===== -->
+    <section class="module" id="m-drawings">
+      <div class="module-head">
+        <div><p class="eyebrow">Drawings &amp; Files</p><h1>Shared with you</h1></div>
+        <div class="draw-filter" id="drawFilter">
+          <button class="df-btn active" data-dfilter="all">All</button>
+          <button class="df-btn" data-dfilter="plan">Plans</button>
+          <button class="df-btn" data-dfilter="section">Sections</button>
+          <button class="df-btn" data-dfilter="detail">Details</button>
+        </div>
+      </div>
+
+      <div class="draw-grid" id="drawGrid">
+        <div class="draw-card" data-dtype="plan">
+          <div class="draw-thumb"><img src="images/d-plan1.webp" alt="Floor plan" /><span class="draw-stype">PLAN</span></div>
+          <div class="draw-body"><h4>Ground Floor Plan — R-04</h4><div class="draw-meta"><span>Updated 2h ago</span><b>v04</b></div></div>
+        </div>
+        <div class="draw-card" data-dtype="section">
+          <div class="draw-thumb"><img src="images/d-plan2.webp" alt="Section drawing" /><span class="draw-stype">SECTION</span></div>
+          <div class="draw-body"><h4>Long Section A-A — R-03</h4><div class="draw-meta"><span>Updated 1d ago</span><b>v03</b></div></div>
+        </div>
+        <div class="draw-card" data-dtype="detail">
+          <div class="draw-thumb"><img src="images/d-plan3.webp" alt="Detail drawing" /><span class="draw-stype">DETAIL</span></div>
+          <div class="draw-body"><h4>Stair Detail 7 — R-02</h4><div class="draw-meta"><span>Updated 3d ago</span><b>v02</b></div></div>
+        </div>
+        <div class="draw-card" data-dtype="plan">
+          <div class="draw-thumb"><img src="images/d-plan4.webp" alt="First floor plan" /><span class="draw-stype">PLAN</span></div>
+          <div class="draw-body"><h4>First Floor Plan — R-04</h4><div class="draw-meta"><span>Updated 2h ago</span><b>v04</b></div></div>
+        </div>
+        <div class="draw-card" data-dtype="section">
+          <div class="draw-thumb"><img src="images/d-plan2.webp" alt="Cross section" /><span class="draw-stype">SECTION</span></div>
+          <div class="draw-body"><h4>Cross Section B-B — R-03</h4><div class="draw-meta"><span>Updated 1d ago</span><b>v03</b></div></div>
+        </div>
+        <div class="draw-card" data-dtype="detail">
+          <div class="draw-thumb"><img src="images/d-plan3.webp" alt="Eave detail" /><span class="draw-stype">DETAIL</span></div>
+          <div class="draw-body"><h4>Eave Detail 3 — R-01</h4><div class="draw-meta"><span>Updated 5d ago</span><b>v01</b></div></div>
+        </div>
+      </div>
+
+      <div class="draw-approvals">
+        <h3>Awaiting your approval</h3>
+        <div class="appr-row">
+          <div class="appr-info"><b>Stair Detail 7 — R-02</b><span>Black-steel stringer &amp; oak treads</span></div>
+          <div class="appr-actions"><button class="appr-yes">Approve</button><button class="appr-no">Query</button></div>
+        </div>
+        <div class="appr-row">
+          <div class="appr-info"><b>Material sample — oak cladding</b><span>Brushed, UV-oil finish</span></div>
+          <div class="appr-actions"><button class="appr-yes appr-done" disabled>Approved</button><button class="appr-no" disabled>Query</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MESSAGES ===== -->
+    <section class="module" id="m-messages">
+      <div class="module-head"><div><p class="eyebrow">Messages</p><h1>Conversation with the studio</h1></div></div>
+      <div class="msg-layout">
+        <div class="msg-threads" id="msgThreads">
+          <div class="msg-thread active" data-thread="iris">
+            <span class="mt-avatar" style="background:#c8693a">IC</span>
+            <div class="mt-body"><b>Iris Calloway</b><i>New R-04 plans uploaded — please review the courtyard steps.</i><span class="mt-time">2h</span></div>
+          </div>
+          <div class="msg-thread" data-thread="sana">
+            <span class="mt-avatar" style="background:#2f6f6a">SO</span>
+            <div class="mt-body"><b>Sana Okafor</b><i>Oak sample arrived — see images.</i><span class="mt-time">1d</span></div>
+          </div>
+          <div class="msg-thread" data-thread="studio">
+            <span class="mt-avatar" style="background:#8a8275">AN</span>
+            <div class="mt-body"><b>Studio admin</b><i>Site visit confirmed for 17 Sep.</i><span class="mt-time">3d</span></div>
+          </div>
+        </div>
+        <div class="msg-chat" id="msgChat">
+          <div class="mc-head"><span class="mc-avatar" style="background:#c8693a">IC</span><div><b>Iris Calloway</b><i>Founding Partner · online</i></div></div>
+          <div class="mc-body" id="mcBody">
+            <div class="mc-msg in"><div class="mc-bubble">Morning Eleanor — I've just uploaded R-04 of the ground floor plan. The courtyard steps now rise in three equal risers as we discussed.</div><span class="mc-time">09:14</span></div>
+            <div class="mc-msg out"><div class="mc-bubble">Thank you, Iris. That reads much better. One question — is the first tread still 150mm?</div><span class="mc-time">09:22</span></div>
+            <div class="mc-msg in"><div class="mc-bubble">Yes, kept at 150 to match the internal floor. The other two are 175. I'll send a quick detail sketch this afternoon.</div><span class="mc-time">09:25</span></div>
+            <div class="mc-msg out"><div class="mc-bubble">Perfect. I'll be at the site visit on the 17th — will you walk me through the stair mockup?</div><span class="mc-time">09:30</span></div>
+            <div class="mc-msg in"><div class="mc-bubble">Absolutely. Theo's setting up a 1:1 tread mockup in board-formed concrete for that day.</div><span class="mc-time">09:33</span></div>
+          </div>
+          <form class="mc-input" id="mcForm">
+            <input type="text" id="mcInput" placeholder="Write a message…" />
+            <button type="submit"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PAYMENTS ===== -->
+    <section class="module" id="m-payments">
+      <div class="module-head"><div><p class="eyebrow">Payments</p><h1>Invoices &amp; balances</h1></div></div>
+
+      <div class="pay-summary">
+        <div class="pay-sum-card"><b>£48,000</b><span>Paid to date</span></div>
+        <div class="pay-sum-card pay-due"><b>£24,000</b><span>Due 01 Oct</span></div>
+        <div class="pay-sum-card"><b>£1,152,000</b><span>Total contract</span></div>
+        <div class="pay-sum-card"><b>42%</b><span>Fee progress</span></div>
+      </div>
+
+      <div class="pay-table">
+        <div class="pt-head"><span>Invoice</span><span>Stage</span><span>Amount</span><span>Issued</span><span>Due</span><span>Status</span></div>
+        <div class="pt-row"><span>#2041</span><span>Stage 1</span><span>£12,000</span><span>12 Feb 2025</span><span>26 Feb 2025</span><span class="pt-paid">Paid</span></div>
+        <div class="pt-row"><span>#2042</span><span>Stage 2</span><span>£12,000</span><span>02 Apr 2025</span><span>16 Apr 2025</span><span class="pt-paid">Paid</span></div>
+        <div class="pt-row"><span>#2042b</span><span>Stage 3</span><span>£24,000</span><span>20 Jun 2025</span><span>04 Jul 2025</span><span class="pt-paid">Paid</span></div>
+        <div class="pt-row"><span>#2043</span><span>Stage 4</span><span>£24,000</span><span>01 Sep 2025</span><span>01 Oct 2025</span><span class="pt-due">Due</span></div>
+        <div class="pt-row pt-future"><span>—</span><span>Stage 5</span><span>£36,000</span><span>Est. Dec 2025</span><span>Est. Jan 2026</span><span class="pt-pending">Pending</span></div>
+        <div class="pt-row pt-future"><span>—</span><span>Stage 6–7</span><span>£1,044,000</span><span>Est. 2026</span><span>On completion</span><span class="pt-pending">Pending</span></div>
+      </div>
+
+      <div class="pay-method">
+        <h3>Payment method</h3>
+        <div class="pm-card">
+          <div class="pm-brand">VISA</div>
+          <div class="pm-num">•••• •••• •••• 4821</div>
+          <div class="pm-exp">Expires 08/27</div>
+          <button class="pm-edit" onclick="location.href='dashboardError.html'">Update</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="module" id="m-timeline">
+      <div class="module-head"><div><p class="eyebrow">Timeline</p><h1>Project milestones</h1></div></div>
+      <div class="tl-wrap">
+        <div class="tl-vline"></div>
+        <div class="tl-item done">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">Jan 2025</span>
+            <h3>Brief &amp; site appraisal</h3>
+            <p>First meeting, measured survey, and the hand-drawn concept section. Three generations, one stair.</p>
+          </div>
+        </div>
+        <div class="tl-item done">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">Mar 2025</span>
+            <h3>Concept design approved</h3>
+            <p>1:50 model built and reviewed on the studio table. Courtyard orientation settled.</p>
+          </div>
+        </div>
+        <div class="tl-item done">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">Jun 2025</span>
+            <h3>Developed design sign-off</h3>
+            <p>Planning consent granted. Room layouts, materials and the stair geometry all fixed.</p>
+          </div>
+        </div>
+        <div class="tl-item active">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">Sep 2025 — now</span>
+            <h3>Technical design</h3>
+            <p>Structural calculations, stair details, and the tender package in preparation. 60% through this stage.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">Dec 2025</span>
+            <h3>Tender &amp; contractor</h3>
+            <p>Three builders to price. Site start targeted for late January 2026.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">2026</span>
+            <h3>Construction</h3>
+            <p>Approximately nine months on site, with weekly visits and monthly client walks.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-node"></span>
+          <div class="tl-card">
+            <span class="tl-date">Q3 2026</span>
+            <h3>Handover &amp; keys</h3>
+            <p>Snagging, the final walk-through, and the keys to the Threaded House.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="js/theme.js"></script>
+<script src="js/client.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — Atelier Noir</title>
+<meta name="description" content="Selected architecture projects by Atelier Noir — residential, cultural, commercial and interior work." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/projects.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"></span>
+    <span class="brand-name">ATELIER NOIR<span>ARCHITECTURE · EST. 2008</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="studio.html">Studio</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <a href="login.html" class="login-link">Client Login</a>
+    <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="menu-backdrop"></div>
+<aside class="mobile-menu" aria-label="Mobile menu">
+  <p class="m-label">Menu</p>
+  <nav>
+    <a href="index.html">Home <span class="num">01</span></a>
+    <a href="projects.html">Projects <span class="num">02</span></a>
+    <a href="studio.html">Studio <span class="num">03</span></a>
+    <a href="services.html">Services <span class="num">04</span></a>
+    <a href="contact.html">Contact <span class="num">05</span></a>
+  </nav>
+  <div class="m-foot">
+    <a href="login.html" class="btn login-btn">Client Login</a>
+    <div class="m-contact">
+      24 Hollow Lane, Dock District<br />
+      hello&#64;ateliernoir.studio<br />
+      +44 20 7946 0123
+    </div>
+  </div>
+</aside>
+
+<!-- ============ 1 · PAGE HERO ============ -->
+<section class="page-hero proj-hero">
+  <div class="blueprint-bg"></div>
+  <div class="container">
+    <p class="crumbs"><a href="index.html">Home</a> / Projects</p>
+    <p class="eyebrow">Portfolio · 2008—2026</p>
+    <h1>Built work,<br />drawn by hand.</h1>
+    <p class="hero-sub">A selection of completed and in-progress commissions — residential, cultural, commercial and interior. Each project begins with a pencil and ends with a key.</p>
+  </div>
+  <div class="hero-corner">
+    <span>06 PROJECTS</span>
+    <span>↓ SCROLL</span>
+  </div>
+</section>
+
+<!-- ============ 2 · FILTER BAR ============ -->
+<section class="filter-bar" id="filter">
+  <div class="container filter-row">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="ftab active" data-filter="all">All</button>
+      <button class="ftab" data-filter="residential">Residential</button>
+      <button class="ftab" data-filter="cultural">Cultural</button>
+      <button class="ftab" data-filter="commercial">Commercial</button>
+      <button class="ftab" data-filter="interior">Interior</button>
+    </div>
+    <p class="filter-count"><span id="fCount">6</span> projects shown</p>
+  </div>
+</section>
+
+<!-- ============ 3 · PROJECT MASONRY ============ -->
+<section class="gallery section-pad" id="gallery">
+  <div class="container">
+    <div class="masonry" id="masonry">
+
+      <article class="m-card m-tall" data-cat="cultural">
+        <img src="images/project3.webp" alt="Cylindrical building" />
+        <div class="m-overlay">
+          <span class="m-no">P/01</span>
+          <h3>The Oculus Pavilion</h3>
+          <p>A cylindrical gallery lit by a single overhead oculus, set into a Cornish hillside.</p>
+          <div class="m-meta"><span>2024</span><span>Cultural</span><span>Cornwall</span></div>
+        </div>
+      </article>
+
+      <article class="m-card" data-cat="residential">
+        <img src="images/project4.webp" alt="White panel facade" />
+        <div class="m-overlay">
+          <span class="m-no">P/02</span>
+          <h3>White Ledger House</h3>
+          <p>A family residence wrapped in stacked white concrete ledgers.</p>
+          <div class="m-meta"><span>2023</span><span>Residential</span></div>
+        </div>
+      </article>
+
+      <article class="m-card" data-cat="interior">
+        <img src="images/project5.webp" alt="Concrete staircase" />
+        <div class="m-overlay">
+          <span class="m-no">P/03</span>
+          <h3>Hollow Stair</h3>
+          <p>A monolithic concrete stair threading a four-storey townhouse.</p>
+          <div class="m-meta"><span>2023</span><span>Interior</span><span>London</span></div>
+        </div>
+      </article>
+
+      <article class="m-card" data-cat="commercial">
+        <img src="images/project6.webp" alt="Geometric facade" />
+        <div class="m-overlay">
+          <span class="m-no">P/04</span>
+          <h3>Grid Works Office</h3>
+          <p>Adaptive-reuse workplace behind a rhythmic geometric screen.</p>
+          <div class="m-meta"><span>2022</span><span>Commercial</span></div>
+        </div>
+      </article>
+
+      <article class="m-card" data-cat="cultural">
+        <img src="images/project7.webp" alt="Sancaklar mosque interior" />
+        <div class="m-overlay">
+          <span class="m-no">P/05</span>
+          <h3>Stillness Chapel</h3>
+          <p>A meditation space of board-formed concrete and a single south light.</p>
+          <div class="m-meta"><span>2021</span><span>Cultural</span><span>Kent</span></div>
+        </div>
+      </article>
+
+      <article class="m-card m-wide" data-cat="residential">
+        <img src="images/project8.webp" alt="Minimalist interior" />
+        <div class="m-overlay">
+          <span class="m-no">P/06</span>
+          <h3>Neon Loft No.9</h3>
+          <p>A warehouse conversion where original brick meets a quiet blue glow.</p>
+          <div class="m-meta"><span>2020</span><span>Residential</span><span>Manchester</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · PROJECT STATEMENT ============ -->
+<section class="project-statement section-pad bg-paper" id="statement">
+  <div class="container statement-grid">
+
+    <div class="statement-image reveal">
+      <img
+        src="images/interior2.webp"
+        alt="Minimal modern architecture"
+      />
+      <span class="image-index">ATELIER / 01</span>
+    </div>
+
+    <div class="statement-content reveal">
+      <p class="eyebrow">Our approach</p>
+
+      <h2>
+        Architecture is not
+        decoration. It is
+        atmosphere.
+      </h2>
+
+      <p class="lead">
+        Every commission is an exercise in reduction — removing
+        everything unnecessary until structure, light, material and
+        movement become the architecture itself.
+      </p>
+
+      <div class="statement-rule"></div>
+
+      <div class="statement-meta">
+        <span>01</span>
+        <p>Context before concept.</p>
+      </div>
+
+      <div class="statement-meta">
+        <span>02</span>
+        <p>Material before ornament.</p>
+      </div>
+
+      <div class="statement-meta">
+        <span>03</span>
+        <p>Light before spectacle.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 5 · MATERIAL / PLACE ============ -->
+<section class="material-place section-pad bg-sand" id="materials">
+
+  <div class="container">
+
+    <div class="section-head material-head reveal">
+      <p class="eyebrow">Material / Place</p>
+      <h2>Four materials.<br>Endless atmospheres.</h2>
+      <p>
+        Our projects are shaped by a restrained material language —
+        chosen for how each surface ages, reflects light and belongs
+        to its setting.
+      </p>
+    </div>
+
+    <div class="material-grid reveal-stagger">
+
+      <article class="material-item">
+        <div class="material-image">
+          <img
+            src="images/building4.webp"
+            alt="Concrete architecture"
+          />
+        </div>
+        <div class="material-body">
+          <span>01 / 04</span>
+          <h3>Concrete</h3>
+          <p>Weight · Silence · Permanence</p>
+        </div>
+      </article>
+
+      <article class="material-item">
+        <div class="material-image">
+          <img
+            src="images/interior3.webp"
+            alt="Warm timber interior"
+          />
+        </div>
+        <div class="material-body">
+          <span>02 / 04</span>
+          <h3>Timber</h3>
+          <p>Warmth · Grain · Time</p>
+        </div>
+      </article>
+
+      <article class="material-item">
+        <div class="material-image">
+          <img
+            src="images/project9.webp"
+            alt="Stone architecture"
+          />
+        </div>
+        <div class="material-body">
+          <span>03 / 04</span>
+          <h3>Stone</h3>
+          <p>Mass · Texture · Ground</p>
+        </div>
+      </article>
+
+      <article class="material-item">
+        <div class="material-image">
+          <img
+            src="images/building5.webp"
+            alt="Glass architecture"
+          />
+        </div>
+        <div class="material-body">
+          <span>04 / 04</span>
+          <h3>Glass</h3>
+          <p>Reflection · Light · Transparency</p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 6 · PROJECT JOURNEY ============ -->
+<section class="project-journey section-pad bg-ink" id="journey">
+
+  <div class="blueprint-bg"></div>
+
+  <div class="container">
+
+    <div class="section-head reveal">
+      <p class="eyebrow">Behind the work</p>
+      <h2>From first line<br>to final wall.</h2>
+    </div>
+
+    <div class="journey-grid reveal-stagger">
+
+      <article class="journey-item">
+        <div class="journey-number">01</div>
+        <div class="journey-image">
+          <img
+            src="images/drawing.webp"
+            alt="Architectural drawings"
+          />
+        </div>
+        <div class="journey-content">
+          <span>Listen</span>
+          <h3>The brief</h3>
+          <p>
+            Understanding the site, people, constraints and ambitions
+            before a single form is proposed.
+          </p>
+        </div>
+      </article>
+
+      <article class="journey-item">
+        <div class="journey-number">02</div>
+        <div class="journey-image">
+          <img
+            src="images/drawing2.webp"
+            alt="Architectural model"
+          />
+        </div>
+        <div class="journey-content">
+          <span>Draw</span>
+          <h3>The proposition</h3>
+          <p>
+            Sketches, models and material studies turn an idea into
+            something that can be tested.
+          </p>
+        </div>
+      </article>
+
+      <article class="journey-item">
+        <div class="journey-number">03</div>
+        <div class="journey-image">
+          <img
+            src="images/project13.webp"
+            alt="Architectural construction"
+          />
+        </div>
+        <div class="journey-content">
+          <span>Build</span>
+          <h3>The reality</h3>
+          <p>
+            Drawings become structure, surfaces, openings and finally
+            the lived experience of a place.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 11 · STUDIO PERSPECTIVE ============ -->
+<section class="studio-perspective section-pad bg-teal">
+
+  <div class="container perspective-grid">
+
+    <div class="perspective-text reveal">
+      <p class="eyebrow">A wider view</p>
+
+      <h2>
+        Good architecture
+        stays after the
+        photograph ends.
+      </h2>
+
+      <p>
+        The measure of a project is not how it looks on completion day,
+        but how naturally it becomes part of someone's life years later.
+      </p>
+
+      <a href="error.html" class="btn btn-ghost-paper">
+        Meet the studio
+        <span class="arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="perspective-image reveal">
+      <img
+        src="images/interior4.webp"
+        alt="Contemporary architecture"
+      />
+      <span>ATELIER NOIR / 2026</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ 7 · SPOTLIGHT (diagonal) ============ -->
+<section class="spotlight section-pad bg-ink" id="spotlight">
+  <div class="blueprint-bg"></div>
+  <div class="container spot-grid">
+    <div class="spot-img reveal">
+      <img src="https://images.pexels.com/photos/13398027/pexels-photo-13398027.jpeg?auto=compress&cs=tinysrgb&h=900&w=800" alt="Minimalist staircase" />
+      <span class="spot-tag">In progress</span>
+    </div>
+    <div class="spot-text reveal">
+      <p class="eyebrow">Current commission</p>
+      <h2>The Threaded House</h2>
+      <p class="lead">A four-storey townhouse organised around a single black-steel and oak stair that threads every level — a spine the rest of the home hangs from.</p>
+      <ul class="spot-list">
+        <li><span>Brief</span>Family home for three generations</li>
+        <li><span>Site</span>Narrow Victorian plot, Islington</li>
+        <li><span>Status</span>On site, completion Q3 2026</li>
+        <li><span>Area</span>310 m² over four floors</li>
+      </ul>
+      <a href="error.html" class="btn btn-solid">Enquire about a commission <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · AWARDS ============ -->
+<section class="awards section-pad bg-paper" id="awards">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Recognition</p>
+      <h2>Awards &amp; honours</h2>
+    </div>
+    <div class="award-list reveal-stagger">
+      <div class="award-row">
+        <span class="aw-year">2024</span>
+        <strong>RIBA National Award</strong>
+        <span>The Oculus Pavilion</span>
+        <span class="aw-kind">Cultural</span>
+      </div>
+      <div class="award-row">
+        <span class="aw-year">2023</span>
+        <strong>AJ House of the Year</strong>
+        <span>White Ledger House</span>
+        <span class="aw-kind">Residential</span>
+      </div>
+      <div class="award-row">
+        <span class="aw-year">2023</span>
+        <strong>Dezeen Award — Interior</strong>
+        <span>Hollow Stair</span>
+        <span class="aw-kind">Interior</span>
+      </div>
+      <div class="award-row">
+        <span class="aw-year">2022</span>
+        <strong>British Council for Offices</strong>
+        <span>Grid Works Office</span>
+        <span class="aw-kind">Commercial</span>
+      </div>
+      <div class="award-row">
+        <span class="aw-year">2021</span>
+        <strong>AJ100 Building of the Year</strong>
+        <span>Stillness Chapel</span>
+        <span class="aw-kind">Cultural</span>
+      </div>
+      <div class="award-row">
+        <span class="aw-year">2020</span>
+        <strong>Don't Move, Improve! Winner</strong>
+        <span>Neon Loft No.9</span>
+        <span class="aw-kind">Residential</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 · INDEX TABLE ============ -->
+<section class="pindex section-pad bg-sand" id="pindex">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Full index</p>
+      <h2>Every commission, 2008—2026</h2>
+    </div>
+    <div class="pindex-table reveal">
+      <div class="pidx-head">
+        <span>No.</span><span>Project</span><span>Type</span><span>Location</span><span>Year</span>
+      </div>
+      <div class="pidx-row"><span>142</span><span>Oculus Pavilion</span><span>Cultural</span><span>Cornwall</span><span>2024</span></div>
+      <div class="pidx-row"><span>141</span><span>White Ledger House</span><span>Residential</span><span>Surrey</span><span>2023</span></div>
+      <div class="pidx-row"><span>140</span><span>Hollow Stair</span><span>Interior</span><span>London</span><span>2023</span></div>
+      <div class="pidx-row"><span>139</span><span>Grid Works Office</span><span>Commercial</span><span>Birmingham</span><span>2022</span></div>
+      <div class="pidx-row"><span>138</span><span>Stillness Chapel</span><span>Cultural</span><span>Kent</span><span>2021</span></div>
+      <div class="pidx-row"><span>137</span><span>Neon Loft No.9</span><span>Residential</span><span>Manchester</span><span>2020</span></div>
+      <div class="pidx-row"><span>136</span><span>Quarry Visitor Centre</span><span>Cultural</span><span>Derbyshire</span><span>2019</span></div>
+    </div>
+    <p class="pidx-note">+ 130 earlier commissions available on request.</p>
+  </div>
+</section>
+
+<!-- ============ 7 · CTA ============ -->
+<section class="cta-band" id="cta">
+  <div class="cta-img"><img src="https://images.pexels.com/photos/26241922/pexels-photo-26241922.jpeg?auto=compress&cs=tinysrgb&h=900&w=1600" alt="Glass facade skyscraper" /></div>
+  <div class="cta-veil"></div>
+  <div class="container cta-inner reveal">
+    <p class="eyebrow">Your project</p>
+    <h2>Next in the index<br />could be yours.</h2>
+    <a href="error.html" class="btn btn-solid">Start a commission <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">ATELIER NOIR<span>ARCHITECTURE · EST. 2008</span></span>
+        </div>
+        <p>An architecture studio crafting spaces where light, material and silence meet. Based in the Dock District, London.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="studio.html">About</a>
+        <a href="studio.html#team">Team</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Client Portal</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <li>24 Hollow Lane</li>
+        <li>Dock District, LDN</li>
+        <li>+44 20 7946 0123</li>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> Atelier Noir Architecture</span>
+      <span>Drawn in the Dock District</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

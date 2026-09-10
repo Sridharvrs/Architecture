@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Atelier Noir</title>
+<meta name="description" content="Contact Atelier Noir — start a commission, book a crit, or visit the studio in the Dock District, London." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <span class="brand-mark"></span>
+    <span class="brand-name">ATELIER NOIR<span>ARCHITECTURE · EST. 2008</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="studio.html">Studio</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-right">
+    <a href="login.html" class="login-link">Client Login</a>
+    <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="menu-backdrop"></div>
+<aside class="mobile-menu" aria-label="Mobile menu">
+  <p class="m-label">Menu</p>
+  <nav>
+    <a href="index.html">Home <span class="num">01</span></a>
+    <a href="projects.html">Projects <span class="num">02</span></a>
+    <a href="studio.html">Studio <span class="num">03</span></a>
+    <a href="services.html">Services <span class="num">04</span></a>
+    <a href="contact.html">Contact <span class="num">05</span></a>
+  </nav>
+  <div class="m-foot">
+    <a href="login.html" class="btn login-btn">Client Login</a>
+    <div class="m-contact">
+      24 Hollow Lane, Dock District<br />
+      hello&#64;ateliernoir.studio<br />
+      +44 20 7946 0123
+    </div>
+  </div>
+</aside>
+
+<!-- ============ 1 · PAGE HERO ============ -->
+<section class="page-hero contact-hero">
+  <div class="blueprint-bg"></div>
+  <div class="container">
+    <p class="crumbs"><a href="index.html">Home</a> / Contact</p>
+    <p class="eyebrow">Get in touch</p>
+    <h1>Bring us your<br />ground and your&nbsp;brief.</h1>
+    <p class="hero-sub">We take on a handful of new commissions each year. Whether you have a site and a budget, or only an idea, the first conversation is always free.</p>
+  </div>
+</section>
+
+<!-- ============ 2 · CONTACT FORM + INFO ============ -->
+<section class="contact-main section-pad bg-paper" id="form">
+  <div class="container contact-grid">
+    <!-- form -->
+    <div class="form-wrap reveal">
+      <p class="eyebrow">Project enquiry</p>
+      <h2>Tell us about it</h2>
+      <form id="enquiryForm" novalidate>
+        <div class="f-row">
+          <label class="f-field">
+            <span>Full name</span>
+            <input type="text" name="name" required oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')" />
+          </label>
+          <label class="f-field">
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <div class="f-row">
+          <label class="f-field">
+            <span>Phone</span>
+            <input type="tel" name="phone" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+          </label>
+          <label class="f-field">
+            <span>Project type</span>
+            <select name="type" required>
+              <option value="" disabled selected>Select…</option>
+              <option>New-build residential</option>
+              <option>Renovation / extension</option>
+              <option>Cultural / public</option>
+              <option>Commercial / workplace</option>
+              <option>Interior only</option>
+              <option>Feasibility / advice</option>
+            </select>
+          </label>
+        </div>
+        <label class="f-field">
+          <span>Site location</span>
+          <input type="text" name="location" placeholder="City, region or address" />
+        </label>
+        <label class="f-field">
+          <span>Tell us about the project</span>
+          <textarea name="message" rows="5" required placeholder="Brief, timeline, budget range, anything you already know…"></textarea>
+        </label>
+        <label class="f-check">
+          <input type="checkbox" name="consent" required />
+          <span>I agree to be contacted about this enquiry.</span>
+        </label>
+        <button type="submit" class="btn btn-solid">Send enquiry <span class="arrow">&rarr;</span></button>
+        <p class="f-status" id="fStatus" role="status"></p>
+      </form>
+    </div>
+
+    <!-- info -->
+    <aside class="contact-aside reveal">
+      <div class="info-card">
+        <h3>Studio</h3>
+        <p>24 Hollow Lane<br />Dock District<br />London E14 8NT</p>
+      </div>
+      <div class="info-card">
+        <h3>Email &amp; phone</h3>
+        <p>hello&#64;ateliernoir.studio<br />+44 20 7946 0123</p>
+      </div>
+      <div class="info-card">
+        <h3>Studio hours</h3>
+        <p>Mon–Fri · 09:00–18:00<br />Visits by appointment</p>
+      </div>
+      <div class="info-card info-card-accent">
+        <h3>Press &amp; talks</h3>
+        <p>For lectures, publications and press, contact Iris Calloway directly.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ 3 · MAP / BLUEPRINT PANEL ============ -->
+<section class="map-panel bg-ink" id="map">
+  <div class="blueprint-bg"></div>
+  <div class="container map-grid">
+    <div class="map-text reveal">
+      <p class="eyebrow">Find us</p>
+      <h2>The Dock District warehouse</h2>
+      <p class="lead">We're a ten-minute walk from Canary Wharf, in a converted shipping warehouse. Look for the black door beside the lime tree.</p>
+      <ul class="map-dir">
+        <li><span>Canary Wharf</span>10 min walk</li>
+        <li><span>Heron Quays</span>4 min walk</li>
+        <li><span>Bike</span>Secure racks on site</li>
+        <li><span>Car</span>Visitor bays by booking</li>
+      </ul>
+    </div>
+    <div class="map-visual reveal">
+      <div class="blueprint-map">
+        <div class="bm-grid"></div>
+        <div class="bm-road bm-road-h" style="top:30%"></div>
+        <div class="bm-road bm-road-h" style="top:68%"></div>
+        <div class="bm-road bm-road-v" style="left:22%"></div>
+        <div class="bm-road bm-road-v" style="left:58%"></div>
+        <div class="bm-water"></div>
+        <div class="bm-pin"><span></span><b>Atelier Noir</b></div>
+        <div class="bm-label" style="top:10%;left:10%">N — CANARY WHARF</div>
+        <div class="bm-label" style="bottom:12%;right:14%">DOCKS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · QUICK CONTACTS ============ -->
+<section class="quick section-pad bg-sand" id="quick">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Other reasons to write</p>
+      <h2>Who else to contact</h2>
+    </div>
+    <div class="quick-grid reveal-stagger">
+      <a href="#" class="q-card">
+        <span class="q-no">A</span>
+        <h3>New commission</h3>
+        <p>Starting a project from scratch — even just an idea and a plot.</p>
+        <span class="q-mail">commissions&#64;ateliernoir.studio</span>
+      </a>
+      <a href="#" class="q-card">
+        <span class="q-no">B</span>
+        <h3>Press &amp; media</h3>
+        <p>Lectures, publications, interviews and image requests.</p>
+        <span class="q-mail">press&#64;ateliernoir.studio</span>
+      </a>
+      <a href="#" class="q-card">
+        <span class="q-no">C</span>
+        <h3>Careers</h3>
+        <p>Portfolios from architects, model-makers and apprentices.</p>
+        <span class="q-mail">careers&#64;ateliernoir.studio</span>
+      </a>
+      <a href="#" class="q-card">
+        <span class="q-no">D</span>
+        <h3>Suppliers</h3>
+        <p>Material reps and craftspeople — we welcome new contacts.</p>
+        <span class="q-mail">suppliers&#64;ateliernoir.studio</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · SOCIAL / FOLLOW ============ -->
+<section class="follow bg-ink-2" id="follow">
+  <div class="container follow-grid reveal-stagger">
+    <div class="foll-intro">
+      <p class="eyebrow">Follow the work</p>
+      <h2>Drawings, models &amp; site visits, posted weekly.</h2>
+    </div>
+    <div class="foll-links">
+      <a href="#" class="foll-link"><span>Instagram</span><b>&#64;ateliernoir</b><i>&rarr;</i></a>
+      <a href="#" class="foll-link"><span>LinkedIn</span><b>Atelier Noir</b><i>&rarr;</i></a>
+      <a href="#" class="foll-link"><span>Journal</span><b>The Drafting Table</b><i>&rarr;</i></a>
+      <a href="#" class="foll-link"><span>Newsletter</span><b>Quarterly print</b><i>&rarr;</i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 · VISIT CTA ============ -->
+<section class="visit section-pad bg-paper" id="visit">
+  <div class="container visit-grid">
+    <div class="reveal">
+      <p class="eyebrow">Visit</p>
+      <h2>Come and see the&nbsp;model shop.</h2>
+      <p class="lead">We open the studio to prospective clients twice a month. Book a slot, bring your brief, and see where the work is made.</p>
+      <a href="error.html" class="btn btn-outline btn-dark">Book a studio visit <span class="arrow">&rarr;</span></a>
+    </div>
+    <div class="visit-img reveal">
+      <img src="images/project13.webp" alt="Architectural model" />
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 · FAQ MINI ============ -->
+<section class="faqmini section-pad bg-sand" id="faqmini">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Before you write</p>
+      <h2>Quick answers</h2>
+    </div>
+    <div class="faqmini-grid reveal-stagger">
+      <div class="fm-card"><h3>Do you charge for the first call?</h3><p>No. The first conversation is always free, whether it leads to a feasibility study or nothing at all.</p></div>
+      <div class="fm-card"><h3>How soon can you start?</h3><p>We typically have a 3–4 month lead time. Feasibility studies can often start sooner.</p></div>
+      <div class="fm-card"><h3>Will you sign an NDA?</h3><p>Yes, happily, before we discuss sensitive sites or commercial briefs.</p></div>
+      <div class="fm-card"><h3>Do you work internationally?</h3><p>Selectively. We have current projects in the UK, Ireland and Portugal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">ATELIER NOIR<span>ARCHITECTURE · EST. 2008</span></span>
+        </div>
+        <p>An architecture studio crafting spaces where light, material and silence meet. Based in the Dock District, London.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <a href="studio.html">About</a>
+        <a href="studio.html#team">Team</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Client Portal</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <li>24 Hollow Lane</li>
+        <li>Dock District, LDN</li>
+        <li>+44 20 7946 0123</li>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="js-year">2026</span> Atelier Noir Architecture</span>
+      <span>Drawn in the Dock District</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

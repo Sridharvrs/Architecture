@@ -1,0 +1,190 @@
+/* ============================================================
+   404 ERROR PAGE — Atelier Noir
+   Blueprint / demolition-site theme
+   ============================================================ */
+
+.error-body { background: var(--ink); color: var(--paper); overflow-x: hidden; }
+.error-body .topbar { background: transparent; }
+
+/* ---- Stage ---- */
+.error-stage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--gut) 80px;
+  overflow: hidden;
+}
+.error-stage .blueprint-bg { opacity: .25; z-index: 0; }
+
+/* ---- Floating blueprint shapes ---- */
+.bp-shapes { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.bp-shape {
+  position: absolute;
+  border: 1px solid var(--line);
+  opacity: .4;
+}
+.s1 { width: 180px; height: 180px; top: 12%; left: 8%; animation: floatShape 9s ease-in-out infinite; }
+.s2 { width: 120px; height: 120px; top: 18%; right: 12%; border-color: var(--accent); opacity: .25; animation: floatShape 11s ease-in-out infinite reverse; transform: rotate(45deg); }
+.s3 { width: 90px; height: 90px; bottom: 16%; left: 14%; border-color: var(--teal); opacity: .2; animation: floatShape 8s ease-in-out infinite; }
+.s4 { width: 140px; height: 140px; bottom: 12%; right: 8%; animation: floatShape 12s ease-in-out infinite reverse; }
+@keyframes floatShape {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(8deg); }
+}
+.s2 { animation-name: floatShapeRot; }
+@keyframes floatShapeRot {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-24px) rotate(52deg); }
+}
+
+/* ---- Inner content ---- */
+.error-inner { position: relative; z-index: 3; text-align: center; max-width: 680px; }
+
+.error-eyebrow {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp .8s var(--ease) .15s forwards;
+}
+
+/* ---- Big 404 number ---- */
+.error-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 20px);
+  margin-bottom: 36px;
+}
+.error-number .digit {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(5rem, 16vw, 11rem);
+  line-height: 1;
+  color: var(--paper);
+  opacity: 0;
+  transform: translateY(60px);
+  animation: digitIn .9s var(--ease) forwards;
+}
+.error-number .digit[data-d="4"]:first-child { animation-delay: .3s; }
+.error-number .digit[data-d="4"]:last-child  { animation-delay: .5s; }
+@keyframes digitIn { to { opacity: 1; transform: translateY(0); } }
+
+/* the "0" is a blueprint building block */
+.digit-block {
+  width: clamp(60px, 11vw, 120px);
+  height: clamp(80px, 15vw, 160px);
+  color: var(--accent);
+  opacity: 0;
+  animation: blockIn 1s var(--ease) .4s forwards;
+}
+@keyframes blockIn {
+  from { opacity: 0; transform: translateY(40px) scale(.8); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.block-svg { width: 100%; height: 100%; }
+.block-svg rect { animation: drawLine 1.4s var(--ease) .6s forwards; stroke-dasharray: 500; stroke-dashoffset: 500; }
+.block-svg line { animation: drawLine 1.2s var(--ease) .9s forwards; stroke-dasharray: 200; stroke-dashoffset: 200; }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+/* ---- Title & sub ---- */
+.error-title {
+  font-size: clamp(1.5rem, 4vw, 2.6rem);
+  margin-bottom: 18px;
+  opacity: 0;
+  animation: fadeUp .8s var(--ease) .7s forwards;
+}
+.error-sub {
+  color: var(--sand);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.7;
+  max-width: 48ch;
+  margin: 0 auto 36px;
+  opacity: 0;
+  animation: fadeUp .8s var(--ease) .85s forwards;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* ---- Actions ---- */
+.error-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp .8s var(--ease) 1s forwards;
+}
+
+/* ---- Sitemap ---- */
+.error-sitemap {
+  border-top: 1px solid var(--line);
+  padding-top: 32px;
+  opacity: 0;
+  animation: fadeUp .8s var(--ease) 1.15s forwards;
+}
+.es-label {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 18px;
+}
+.es-links {
+  display: flex;
+  gap: clamp(16px, 4vw, 32px);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.es-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: .95rem;
+  color: var(--paper);
+  opacity: .75;
+  transition: opacity .3s, color .3s, gap .3s;
+}
+.es-links a span {
+  font-family: var(--font-mono);
+  font-size: .62rem;
+  letter-spacing: .12em;
+  color: var(--accent);
+}
+.es-links a:hover { opacity: 1; color: var(--accent-2); gap: 12px; }
+
+/* ---- Corner crosshairs (surveyor marks) ---- */
+.crosshair {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  opacity: .35;
+}
+.crosshair::before, .crosshair::after {
+  content: "";
+  position: absolute;
+  background: var(--accent);
+}
+.crosshair::before { width: 100%; height: 1px; top: 50%; }
+.crosshair::after { width: 1px; height: 100%; left: 50%; }
+.ch-tl { top: 90px; left: 32px; }
+.ch-tr { top: 90px; right: 32px; }
+.ch-bl { bottom: 32px; left: 32px; }
+.ch-br { bottom: 32px; right: 32px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .crosshair { display: none; }
+  .error-actions { flex-direction: column; align-items: stretch; }
+  .error-actions .btn { justify-content: center; }
+  .es-links { gap: 14px 24px; }
+}
