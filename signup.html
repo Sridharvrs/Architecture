@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Create Account — Atelier Noir</title>
+
+  <meta
+    name="description"
+    content="Create your Atelier Noir client or studio team portal account."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Shared Theme -->
+  <link rel="stylesheet" href="css/theme.css" />
+
+  <!-- Signup CSS -->
+  <link rel="stylesheet" href="css/signup.css" />
+</head>
+
+<body class="signup-body">
+
+  <!-- ============================================================
+       TOP BAR
+  ============================================================ -->
+
+  <header class="topbar signup-top">
+
+    <a href="index.html" class="brand">
+      <img
+        src="images/logooi.webp"
+        alt="Atelier Noir Architecture"
+        class="brand-logo"
+      />
+    </a>
+
+    <a href="login.html" class="signup-back">
+      Already have an account? <span>Sign in</span>
+    </a>
+
+  </header>
+
+
+  <!-- ============================================================
+       SIGNUP STAGE
+  ============================================================ -->
+
+  <main class="signup-stage">
+
+    <!-- Blueprint background -->
+    <div class="signup-bg"></div>
+
+
+    <!-- Close button -->
+    <a
+      href="index.html"
+      class="signup-close"
+      aria-label="Close signup"
+    >
+      <span></span>
+      <span></span>
+    </a>
+
+
+    <!-- ============================================================
+         SIGNUP CARD
+    ============================================================ -->
+
+    <div class="signup-card reveal in">
+
+
+      <!-- ==========================================================
+           VISUAL SIDE
+      =========================================================== -->
+
+      <div class="signup-visual">
+
+        <div class="sv-grid"></div>
+
+        <div class="sv-ring sv-ring-one"></div>
+        <div class="sv-ring sv-ring-two"></div>
+
+
+        <div class="sv-content">
+
+          <p class="eyebrow">
+            Atelier Noir Portal
+          </p>
+
+          <h2>
+            Begin with<br />
+            a blank page.
+          </h2>
+
+          <p>
+            Create your portal account and step inside the
+            process — from first sketch to final detail.
+          </p>
+
+        </div>
+
+
+        <div class="sv-foot">
+
+          <span>PRIVATE PORTAL</span>
+          <span>EST. 2008</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ==========================================================
+           FORM SIDE
+      =========================================================== -->
+
+      <div class="signup-form-side">
+
+        <div class="signup-heading">
+
+          <p class="signup-kicker">
+            NEW ACCOUNT
+          </p>
+
+          <h1>
+            Create your account.
+          </h1>
+
+          <p class="signup-sub">
+            Join your Atelier Noir project portal below.
+          </p>
+
+        </div>
+
+
+        <!-- ========================================================
+             ROLE SELECTOR
+        ========================================================= -->
+
+        <div class="role-select" id="roleSelect">
+
+          <!-- CLIENT -->
+
+          <button
+            type="button"
+            class="role-btn active"
+            data-role="client"
+          >
+
+            <span class="role-ic">
+
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 12a5 5 0 100-10 5 5 0 000 10zM2 22a10 10 0 0120 0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+
+            </span>
+
+            <span class="role-tx">
+              <b>Client</b>
+              <i>Project owner</i>
+            </span>
+
+          </button>
+
+
+          <!-- ARCHITECT -->
+
+          <button
+            type="button"
+            class="role-btn"
+            data-role="architect"
+          >
+
+            <span class="role-ic">
+
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+            </span>
+
+            <span class="role-tx">
+              <b>Architect</b>
+              <i>Studio team</i>
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <!-- ========================================================
+             FORM
+        ========================================================= -->
+
+        <form id="signupForm" novalidate>
+
+
+          <!-- FULL NAME -->
+
+          <label class="sf-field">
+
+            <span>Full Name</span>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Your full name"
+            />
+
+          </label>
+
+
+          <!-- EMAIL -->
+
+          <label class="sf-field">
+
+            <span id="emailLabel">
+              Email Address
+            </span>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@email.com"
+            />
+
+          </label>
+
+
+          <!-- PASSWORD -->
+
+          <label class="sf-field">
+
+            <span>Password</span>
+
+            <div class="sf-pw">
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                autocomplete="new-password"
+                placeholder="••••••••"
+              />
+
+              <button
+                type="button"
+                class="pw-toggle"
+                id="togglePassword"
+                aria-label="Show password"
+              >
+                <i class="fa-regular fa-eye"></i>
+              </button>
+
+            </div>
+
+
+            <!-- PASSWORD STRENGTH -->
+
+            <div class="strength-wrap">
+
+              <div class="strength-track">
+                <span
+                  id="strengthFill"
+                  class="strength-fill"
+                ></span>
+              </div>
+
+              <span
+                id="strengthText"
+                class="strength-text"
+              >
+                Enter a password
+              </span>
+
+            </div>
+
+          </label>
+
+
+          <!-- CONFIRM PASSWORD -->
+
+          <label class="sf-field">
+
+            <span>Confirm Password</span>
+
+            <div class="sf-pw">
+
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                required
+                autocomplete="new-password"
+                placeholder="••••••••"
+              />
+
+              <button
+                type="button"
+                class="pw-toggle"
+                id="toggleConfirmPassword"
+                aria-label="Show password"
+              >
+                <i class="fa-regular fa-eye"></i>
+              </button>
+
+            </div>
+
+          </label>
+
+
+          <!-- TERMS -->
+
+          <div class="sf-row">
+
+            <label class="remember">
+
+              <input
+                type="checkbox"
+                name="terms"
+              />
+
+              <span>
+                I agree to the
+                <a href="#" class="terms-link">
+                  Terms &amp; Privacy Policy
+                </a>
+              </span>
+
+            </label>
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="btn btn-solid signup-submit"
+          >
+
+            Create account
+
+            <span class="arrow">
+              &rarr;
+            </span>
+
+          </button>
+
+
+          <!-- MESSAGE -->
+
+          <p
+            id="signupMessage"
+            class="signup-message"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+
+        </form>
+
+
+        <!-- ========================================================
+             LOGIN LINK
+        ========================================================= -->
+
+        <p class="signup-foot">
+
+          Already have an account?
+
+          <a href="login.html">
+            Sign in
+          </a>
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Shared JS -->
+  <script src="js/theme.js"></script>
+
+  <!-- Signup JS -->
+  <script src="js/signup.js"></script>
+
+</body>
+</html>
