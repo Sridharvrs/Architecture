@@ -130,7 +130,7 @@
   background: var(--ink); color: var(--paper);
   font-family: var(--font-mono); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase;
 }
-.pidx-row { border-bottom:1px solid var(--line-dark); font-size:.92rem; transition: background .3s, color .3s; }
+.pidx-row { border-bottom:1px solid var(--line-dark); font-size:.92rem; transition: background .3s, color .3s; background: #ffffff82; }
 .pidx-row:last-child { border-bottom:none; }
 .pidx-row:hover { background: var(--paper); color: var(--teal); }
 .pidx-row span:first-child { font-family: var(--font-mono); color: var(--accent); }
