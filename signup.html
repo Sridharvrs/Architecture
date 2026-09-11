@@ -235,6 +235,7 @@
               name="name"
               required
               autocomplete="name"
+              oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')"
               placeholder="Your full name"
             />
 

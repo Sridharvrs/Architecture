@@ -43,7 +43,7 @@
     <a href="projects.html">Projects <span class="num">02</span></a>
     <a href="studio.html">Studio <span class="num">03</span></a>
     <a href="services.html">Services <span class="num">04</span></a>
-    <a href="contact.html">Contact <span class="num">05</span></a>
+    <a href="contact.html" class="is-active">Contact <span class="num">05</span></a>
   </nav>
   <div class="m-foot">
     <a href="login.html" class="btn login-btn">Client Login</a>
@@ -77,17 +77,17 @@
         <div class="f-row">
           <label class="f-field">
             <span>Full name</span>
-            <input type="text" name="name" required oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')" />
+            <input type="text" name="name" placeholder="Sridhar" required oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')" />
           </label>
           <label class="f-field">
             <span>Email</span>
-            <input type="email" name="email" required />
+            <input type="email" name="email" placeholder="you@email.com" required />
           </label>
         </div>
         <div class="f-row">
           <label class="f-field">
             <span>Phone</span>
-            <input type="tel" name="phone" oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
+            <input type="tel" name="phone" placeholder="+91 " oninput="this.value=this.value.replace(/[^0-9]/g,'')" />
           </label>
           <label class="f-field">
             <span>Project type</span>
@@ -287,11 +287,12 @@
         </div>
       </div>
       <div class="footer-col">
-        <h4>Studio</h4>
+        <h4>Quick links</h4>
         <a href="index.html">Home</a>
         <a href="studio.html">Studio</a>
         <a href="services.html">Services</a>
         <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
